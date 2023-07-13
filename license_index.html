@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="particles.js"></script>
+</head>
+
+<body oncontextmenu="return false;" style=" -ms-user-select: none;user-select: none;">
+    <header>
+        <span class="title-bar" onmousedown="neutron.DragTitleBar()">KOSMOS PREFIRE</span>
+        <span class="title-btn title-btn-restore" onclick="neutron.Minimize()">0</span>
+        <span class="title-btn title-btn-close" onclick="neutron.Close()">r</span>
+    </header>
+
+    <div class="background-container" oncontextmenu="return false"></div>
+    <div id="particles-js"></div>
+    <div class="container" oncontextmenu="return false">
+        <div class="row">
+            <div class="col-lg-3 col-md-2"></div>
+            <div class="grid-container login-box">
+                <!-- <img src="favicon-3.png" alt="KOSMOS" class="image" style="width: 60px; height: 60px" /> -->
+                <!-- <div class="col-lg-12 login-title">KOSMOS</div> -->
+
+                <div class="col-lg-12 login-form">
+                    <div class="col-lg-12 login-form">
+                        <form>
+                            <div class="grid-container login-box">
+                                <div class="form-group">
+                                    <label class="form-control-label">INSERT KEY</label>
+                                    <input type="text" class="form-control" id="key" />
+
+                                    <div class="col-lg-12 loginbttm" style="margin-top: -10px">
+                                        <button type="submit" class="log" onclick="ahk.CheckKey(event)">LOGIN</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-2"></div>
+        </div>
+    </div>
+</body>
+
+<style>
+    .background-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        background-image: url("background2.jpg");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.45;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+        filter: alpha(opacity=65);
+        pointer-events: none;
+    }
+</style>
+
+<script>
+    // Configuration object for Particle.js
+    var config = {
+        particles: {
+            number: {
+                value: 80,
+                density: {
+                    enable: true,
+                    value_area: 800,
+                },
+            },
+            color: {
+                value: "#ffffff",
+            },
+            shape: {
+                type: "circle",
+                stroke: {
+                    width: 0,
+                    color: "#000000",
+                },
+                polygon: {
+                    nb_sides: 5,
+                },
+                image: {
+                    src: "path/to/your/image.png",
+                    width: 100,
+                    height: 100,
+                },
+            },
+            opacity: {
+                value: 0.0,
+                random: false,
+                anim: {
+                    enable: false,
+                    speed: 1,
+                    opacity_min: 0.1,
+                    sync: false,
+                },
+            },
+            size: {
+                value: 3,
+                random: true,
+                anim: {
+                    enable: false,
+                    speed: 40,
+                    size_min: 0.1,
+                    sync: false,
+                },
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: "#ffffff",
+                opacity: 0.4,
+                width: 1,
+            },
+            move: {
+                enable: true,
+                speed: 3,
+                direction: "none",
+                random: false,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+                attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 1200,
+                },
+            },
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: {
+                    enable: false,
+                    mode: "repulse",
+                },
+                onclick: {
+                    enable: false,
+                    mode: "push",
+                },
+                resize: true,
+            },
+            modes: {
+                grab: {
+                    distance: 400,
+                    line_linked: {
+                        opacity: 1,
+                    },
+                },
+                bubble: {
+                    distance: 400,
+                    size: 40,
+                    duration: 2,
+                    opacity: 8,
+                    speed: 3,
+                },
+                repulse: {
+                    distance: 200,
+                    duration: 0.4,
+                },
+                push: {
+                    particles_nb: 4,
+                },
+                remove: {
+                    particles_nb: 2,
+                },
+            },
+        },
+        retina_detect: true,
+    };
+
+    // Initialize Particle.js
+    particlesJS("particles-js", config);
+</script>
